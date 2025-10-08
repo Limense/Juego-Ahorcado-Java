@@ -1,18 +1,76 @@
-## Getting Started
+# Juego del Ahorcado (Hangman Game)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Un juego clásico del ahorcado implementado en Java donde el jugador debe adivinar una palabra secreta letra por letra.
 
-## Folder Structure
+## Descripción
 
-The workspace contains two folders by default, where:
+Este programa implementa el juego del ahorcado donde:
+- El jugador tiene 10 intentos máximos
+- Debe adivinar la palabra secreta "inteligencia"
+- Por cada letra incorrecta se reduce el número de intentos
+- El juego termina cuando se adivina la palabra completa o se agotan los intentos
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Estructura del Proyecto
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+```
+├── README.md
+├── .vscode/
+│   └── settings.json        # Configuración de VS Code para Java
+├── bin/
+│   └── Ahorcado.class      # Archivo compilado
+├── lib/                    # Dependencias (vacío)
+└── src/
+    └── Ahorcado.java       # Código fuente principal
+```
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Requisitos
 
-## Dependency Management
+- Java 8 o superior
+- Visual Studio Code con extensión de Java (opcional)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Cómo ejecutar
+
+### Opción 1: Usando VS Code
+1. Abrir el proyecto en VS Code
+2. Presionar `F5` o hacer clic en "Run" en el archivo `Ahorcado.java`
+
+### Opción 2: Línea de comandos
+```bash
+# Compilar
+javac src/Ahorcado.java -d bin
+
+# Ejecutar
+java -cp bin Ahorcado
+```
+
+## Cómo jugar
+
+1. Al iniciar el programa, verás guiones bajos (`_`) que representan cada letra de la palabra secreta
+2. Ingresa una letra cuando se te solicite
+3. Si la letra está en la palabra, se revelará en su posición correcta
+4. Si la letra no está en la palabra, perderás un intento
+5. Tienes 10 intentos para adivinar la palabra completa
+6. Ganas si completas la palabra antes de agotar los intentos
+
+## Ejemplo de ejecución
+
+```
+_ _ _ _ _ _ _ _ _ _ _ _
+Adivina una letra: 
+e
+_ _ _ e _ _ _ e _ _ _ _
+Adivina una letra: 
+i
+i _ _ e _ i _ e _ _ i _
+```
+
+## Características del código
+
+- Uso de arrays para almacenar las letras adivinadas
+- Estructuras de control (bucles `for` y `while`)
+- Manejo de entrada del usuario con `Scanner`
+- Validación de condiciones de victoria y derrota
+
+## Autor
+
+Desarrollado como proyecto de práctica de Java.
